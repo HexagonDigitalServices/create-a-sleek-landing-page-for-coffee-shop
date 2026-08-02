@@ -1,0 +1,1781 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Coffee House — Artisan Roastery & Urban Sanctuary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a1810;
+      --primary-light: #42281d;
+      --accent: #d97706;
+      --accent-hover: #b45309;
+      --accent-soft: rgba(217, 119, 6, 0.12);
+      --bg: #fcf8f2;
+      --bg-soft: #f4eee5;
+      --surface: #ffffff;
+      --ink: #1c130e;
+      --muted: #6b584c;
+      --border: #e6ded2;
+      --radius-sm: 0.5rem;
+      --radius: 0.85rem;
+      --radius-lg: 1.5rem;
+      --shadow-sm: 0 2px 8px -2px rgba(42, 24, 16, 0.08);
+      --shadow: 0 12px 32px -12px rgba(42, 24, 16, 0.14);
+      --shadow-lg: 0 24px 48px -18px rgba(42, 24, 16, 0.22);
+      
+      /* Updated Editorial & Craft Typography */
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Outfit', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.68;
+      letter-spacing: -0.011em;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern", "liga", "clig", "calt";
+    }
+
+    [hidden] { display: none !important; }
+
+    /* Refined Typography Hierarchy */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { 
+      font-size: clamp(2.6rem, 5.8vw, 4.2rem); 
+      font-weight: 700;
+    }
+    
+    h1 em, h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+      padding-right: 0.15em;
+    }
+
+    h2 { 
+      font-size: clamp(1.9rem, 4.2vw, 2.9rem); 
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h3 { 
+      font-size: 1.3rem; 
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    p { 
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-intro p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-top: 0.85rem;
+    }
+
+    /* Container & Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: clamp(3.5rem, 6vw, 6rem) 0;
+    }
+
+    /* Buttons & Links */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.88rem 1.85rem;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.925rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      line-height: 1.2;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #b45309 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.32);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45);
+      background: linear-gradient(135deg, #e08313 0%, #a14805 100%);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--primary);
+      border-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-dark:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    /* Header Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 248, 242, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(230, 222, 210, 0.85);
+      transition: background 0.3s;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: var(--surface);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    nav.nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+
+    nav.nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .auth-link {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .auth-link:hover {
+      color: var(--accent);
+    }
+
+    /* Cart Header Button */
+    .cart-icon {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cart-icon:hover {
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 999px;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--surface);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 4.5rem 0 5.5rem 0;
+      overflow: hidden;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 50vw;
+      height: 50vw;
+      max-width: 600px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.16) 0%, rgba(252, 248, 242, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-content p.hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .ctas {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .trust-line {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .trust-line strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .avatars-stack {
+      display: flex;
+      margin-right: 0.25rem;
+    }
+
+    .avatar-sm {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--surface);
+      margin-left: -10px;
+      object-fit: cover;
+    }
+
+    .avatar-sm:first-child {
+      margin-left: 0;
+    }
+
+    /* Hero Visual Card Stack */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-main-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .hero-main-card img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.75rem;
+      background: linear-gradient(to top, rgba(28, 19, 14, 0.9), transparent);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .hero-card-overlay h4 {
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-card-overlay p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.88rem;
+      margin-top: 0.2rem;
+    }
+
+    .floating-badge {
+      position: absolute;
+      top: -1.25rem;
+      left: -1.25rem;
+      background: var(--surface);
+      padding: 0.9rem 1.35rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      z-index: 2;
+    }
+
+    .badge-icon {
+      font-size: 1.6rem;
+    }
+
+    .badge-text strong {
+      display: block;
+      color: var(--primary);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .badge-text span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    /* Trust / Stats Band */
+    .stats-bar {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 2.75rem 0;
+      border-radius: var(--radius-lg);
+      margin: 1.5rem auto 3rem auto;
+      box-shadow: var(--shadow);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-item p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    /* Features / Craft Section */
+    .icon-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 1.35rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.85rem;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      padding: 2.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      font-size: 0.98rem;
+      line-height: 1.62;
+    }
+
+    /* Menu / Product Grid Section */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      background-color: var(--bg-soft);
+    }
+
+    .product-details {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.25rem;
+    }
+
+    .product-card .desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.35rem;
+      flex-grow: 1;
+      line-height: 1.55;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--bg-soft);
+    }
+
+    .price {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .add-to-cart {
+      background: var(--bg-soft);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .add-to-cart:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    /* Story Section */
+    .story-section {
+      background: var(--bg-soft);
+      position: relative;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .story-image-stack {
+      position: relative;
+    }
+
+    .story-img-main {
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .story-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 1.85rem;
+      border-radius: var(--radius-lg);
+      max-width: 250px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .story-badge h4 {
+      color: var(--accent);
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .story-badge p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .story-content h2 {
+      margin-bottom: 1.35rem;
+    }
+
+    .story-content p {
+      margin-bottom: 1.25rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    /* Testimonials Section */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      padding: 2.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .testimonial-card quote {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      display: block;
+    }
+
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-size: 0.98rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .author-info span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Location & Contact Section */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .location-info {
+      background: var(--surface);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .location-card {
+      margin-bottom: 1.85rem;
+      padding-bottom: 1.85rem;
+      border-bottom: 1px solid var(--bg-soft);
+    }
+
+    .location-card:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .location-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .location-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-form-box {
+      background: var(--surface);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.01em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--bg);
+      color: var(--ink);
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #ffffff;
+    }
+
+    /* CTA Band */
+    .cta-band {
+      background: linear-gradient(135deg, var(--primary) 0%, #170d08 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 4.75rem 1.75rem;
+      border-radius: var(--radius-lg);
+      margin: 2rem auto 4rem auto;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-band h2 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .cta-band p {
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 600px;
+      margin: 0 auto 2.25rem auto;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .cta-band .btn {
+      background: #ffffff;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .cta-band .btn:hover {
+      background: var(--bg-soft);
+      transform: translateY(-2px);
+    }
+
+    /* Auth Cards */
+    .auth-card {
+      max-width: 440px;
+      margin: 4rem auto;
+      padding: 2.75rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .auth-card h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .auth-card p.auth-sub {
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .auth-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .auth-footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 4.75rem 0 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    .foot-brand {
+      grid-column: span 1;
+    }
+
+    .foot-brand .logo {
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .foot-brand p {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .foot-col h4 {
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .foot-col ul {
+      list-style: none;
+    }
+
+    .foot-col ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .foot-col ul li a {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .foot-col ul li a:hover {
+      color: var(--accent);
+    }
+
+    .foot-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.52);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .container { padding: 0 1rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-content { max-width: 100%; text-align: center; }
+      .eyebrow { margin-left: auto; margin-right: auto; }
+      .ctas { justify-content: center; }
+      .trust-line { justify-content: center; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .story-badge { position: relative; bottom: 0; right: 0; max-width: 100%; margin-top: 1rem; }
+      h1 { font-size: clamp(2rem, 6vw, 3rem); }
+      h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    }
+
+    @media (max-width: 480px) {
+      header nav.nav-links { display: none; }
+      header .auth-link { display: none; }
+      .ctas { flex-direction: column; width: 100%; }
+      .ctas .btn { width: 100%; min-height: 48px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .foot-grid { grid-template-columns: 1fr; text-align: center; }
+      .foot-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+      .hero-main-card img { height: 300px; }
+      .floating-badge { top: 0.5rem; left: 0.5rem; padding: 0.6rem 0.85rem; }
+      .auth-card { margin: 2rem 1rem; padding: 1.75rem; }
+    }
+  </style>
+<style id="__mintsite_fix__">
+/* ── mintsite auto-fix: prevent overlapping + force responsiveness ── */
+*, *::before, *::after { box-sizing:border-box; }
+html, body { max-width:100% !important; overflow-x:hidden !important; margin:0 !important; padding-left:0 !important; padding-right:0 !important; }
+body { position:relative; }
+h1, h2, h3, h4, p, a, span, button, label { overflow-wrap:break-word !important; word-break:break-word; max-width:100%; }
+img, svg, video, iframe { max-width:100% !important; height:auto; display:block; }
+
+/* ── Defensive default-styles override — kicks in when the AI (especially
+   Groq's llama-3.3-70b) skips styling links and buttons. Keeps every site
+   looking polished even when the AI's CSS is thin. ── */
+
+/* Links: no default blue/underline anywhere. The AI almost never overrides
+   this for footer/secondary links, so it leaks browser defaults. */
+a { color:inherit !important; text-decoration:none !important; }
+a:hover { text-decoration:none; }
+
+/* Footer column links: ensure they're light-on-dark, no underline, soft hover. */
+footer a, [class*="footer"] a { color:rgba(255,255,255,.78) !important; transition:color .15s; }
+footer a:hover, [class*="footer"] a:hover { color:#fff !important; }
+
+/* Footer headings (column titles like "Browse" "Account" "Follow"): uppercase
+   eyebrow style so they don't look like raw h4s. */
+footer h3, footer h4, footer h5, [class*="footer"] h3, [class*="footer"] h4 {
+  font-size:.78rem !important; letter-spacing:.08em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.55) !important; font-weight:600 !important; margin-bottom:1rem !important;
+}
+/* Footer list items: no bullet, tight spacing. */
+footer ul, [class*="footer"] ul { list-style:none !important; padding-left:0 !important; margin:0 !important; }
+footer ul li, [class*="footer"] ul li { padding:.3rem 0 !important; }
+
+/* Buttons: never the chrome-default look. Round + cursor + smooth transition.
+   Specific .add-to-cart styling lives below this. */
+button:not(.cart-icon):not(.__ms-hamburger):not(.__ms-x):not(.__ms-cart-checkout) {
+  cursor:pointer; border-radius:.5rem; font-family:inherit; transition:transform .15s, box-shadow .15s, background .15s;
+}
+
+/* .add-to-cart — primary CTA on product cards. AI usually forgets the
+   gradient + padding even when we ask for it. Force a baseline. */
+.add-to-cart, [data-add-to-cart] {
+  display:inline-flex !important; align-items:center !important; gap:.4rem !important;
+  padding:.6rem 1.1rem !important;
+  border-radius:.55rem !important;
+  background:linear-gradient(135deg, var(--primary, #1d4ed8), color-mix(in srgb, var(--primary, #1d4ed8) 72%, #000)) !important;
+  color:#fff !important; font-weight:600 !important; font-size:.88rem !important;
+  border:0 !important; cursor:pointer !important;
+  box-shadow:0 6px 18px -6px rgba(0,0,0,.25) !important;
+  transition:transform .15s, box-shadow .15s, filter .15s !important;
+}
+.add-to-cart:hover, [data-add-to-cart]:hover {
+  transform:translateY(-1px) !important; filter:brightness(1.08) !important;
+  box-shadow:0 10px 26px -6px rgba(0,0,0,.35) !important;
+}
+
+/* Product price tag — bold, accent color (not raw body text). */
+.price, .product-card .price, [class*="price-row"] .price {
+  font-size:1.1rem !important; font-weight:700 !important;
+  color:var(--primary, #1d4ed8) !important;
+}
+
+/* ── Form fields — the AI very often leaves inputs/textareas browser-default
+   (no border radius, labels inline). Give every form a clean baseline so
+   contact / sign-in / sign-up forms always look intentional. ── */
+form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+form textarea, form select {
+  display:block !important; width:100% !important; box-sizing:border-box !important;
+  padding:.7rem .9rem !important; margin-top:.35rem !important;
+  border:1px solid rgba(15,23,42,.16) !important; border-radius:.6rem !important;
+  background:#fff !important; color:#0f172a !important;
+  font-size:.95rem !important; font-family:inherit !important; line-height:1.4 !important;
+  transition:border-color .15s, box-shadow .15s !important;
+}
+form input::placeholder, form textarea::placeholder { color:#94a3b8 !important; }
+form input:focus, form textarea:focus, form select:focus {
+  outline:none !important; border-color:var(--primary,#6366f1) !important;
+  box-shadow:0 0 0 3px rgba(99,102,241,.18) !important;
+}
+form textarea { min-height:120px !important; resize:vertical !important; }
+form label {
+  display:block !important; margin-top:.9rem !important; margin-bottom:.1rem !important;
+  font-size:.85rem !important; font-weight:600 !important; color:#334155 !important;
+}
+/* Submit buttons inside forms get the primary look if the AI under-styled them. */
+form button[type="submit"], form .btn-primary {
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  gap:.4rem !important; margin-top:1.1rem !important;
+  padding:.75rem 1.4rem !important; border:0 !important; border-radius:.6rem !important;
+  background:linear-gradient(135deg, var(--primary,#1d4ed8), color-mix(in srgb, var(--primary,#1d4ed8) 72%, #000)) !important;
+  color:#fff !important; font-weight:600 !important; font-size:.95rem !important; cursor:pointer !important;
+}
+
+/* Generic primary/ghost buttons + nav links the AI may have under-styled. */
+.btn-primary, [class*="btn-primary"] {
+  background:linear-gradient(135deg, var(--primary, #1d4ed8), color-mix(in srgb, var(--primary, #1d4ed8) 72%, #000)) !important;
+  color:#fff !important; padding:.7rem 1.4rem !important;
+  border-radius:.6rem !important; border:0 !important; font-weight:600 !important;
+}
+
+/* Lists rendered by the AI in the body should not be bullet-defaulted blue. */
+main ul:not([role]):not([class]), main ol:not([role]):not([class]) {
+  list-style:none !important; padding-left:0 !important;
+}
+.blob, [class*="blob"], [class*="gradient-orb"], [class*="bg-blur"] {
+  position:fixed !important; z-index:0 !important; opacity:.15 !important;
+  pointer-events:none !important; max-width:500px !important; max-height:500px !important;
+}
+section, main, .hero, [id="home"], [id="features"], [id="pricing"],
+[id="testimonials"], [id="faq"], [id="contact"], [id="about"],
+[id="cta"], [id="how-it-works"], article, .container {
+  position:relative; z-index:1; max-width:100%;
+}
+header, nav.nav, .navbar, [class*="header"], [class*="navbar"] {
+  position:sticky !important; top:0 !important; z-index:50 !important;
+  background:rgba(255,255,255,.92) !important; backdrop-filter:blur(12px) !important;
+  -webkit-backdrop-filter:blur(12px) !important;
+}
+.hero-card, [class*="hero-card"], [class*="hero-image"], [class*="hero-visual"] {
+  max-width:100% !important; overflow:hidden;
+}
+[class*="grid"] { max-width:100%; }
+
+/* ── Bulletproof card grids: never collapse so narrow that text wraps one
+   letter per line. auto-fit + minmax keeps each card >=240px and wraps to
+   fewer columns instead of squishing. Overrides brittle repeat(3,1fr). ── */
+.product-grid, [class*="product-grid"], .grid-2, .grid-3, .grid-4,
+[class*="grid-2"], [class*="grid-3"], [class*="grid-4"] {
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important;
+  gap:1.5rem !important; align-items:stretch !important;
+}
+/* If a grid lands on a SECTION's container by mistake, force heading, intro AND
+   the card grid to span the full row so cards lay out properly. Scoped to
+   sections only — footers use .container too and must keep their columns. */
+section > h1, section > h2, section > h3, section > p, section > .product-grid,
+section .container > h1, section .container > h2, section .container > h3,
+section .container > p, section .container > .product-grid {
+  grid-column:1 / -1 !important;
+}
+/* Price + Add to Cart never break to one-letter-per-line. */
+.price, .add-to-cart, [data-add-to-cart] { white-space:nowrap !important; }
+
+/* Keep section padding sane — huge AI padding (6-8rem) leaves big empty gaps
+   between components. Hero keeps its own padding. */
+section:not(.hero):not([class*="hero"]):not([id="home"]):not([id="hero"]) {
+  padding-top:clamp(2.5rem, 5vw, 4rem) !important;
+  padding-bottom:clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+/* Non-home page headers reuse .hero (a 2-column flex) → their heading/text
+   children squish into a narrow column. Let them wrap + span full row. */
+.hero > .container, .hero-content, .hero .container { flex-wrap:wrap; }
+.hero > .container > h1, .hero > .container > h2, .hero > .container > h3,
+.hero > .container > p, .hero > .container > span, .hero > .container > .eyebrow,
+.hero > .container > .btn, .hero > .container > .ctas, .hero > .container > a {
+  flex-basis:100% !important; max-width:100% !important;
+}
+/* CTA-band button stays readable (white pill + brand-colour text). */
+.cta-band .btn, .cta-band a.btn, .cta-band button,
+.cta-section .btn, .cta-section a.btn {
+  background:#fff !important; color:var(--primary, #1d4ed8) !important; border-color:#fff !important;
+}
+
+/* Auth cards: tighter margin, sensible heading size (the AI's big clamp wraps
+   "Create Your account" one word per line), and no tall forced min-height. */
+.auth-card, [class*="auth-card"] { margin:1.5rem auto !important; }
+.auth-card h1, .auth-card h2, [class*="auth-card"] h1, [class*="auth-card"] h2 {
+  font-size:clamp(1.4rem, 3.5vw, 2rem) !important; line-height:1.2 !important;
+}
+[id="signin"], [id="signup"], [id="login"],
+[data-page="signin"], [data-page="signup"] { min-height:auto !important; }
+footer, [class*="footer"] { position:relative !important; z-index:1; max-width:100%; }
+
+/* ── TABLET (≤768px): grids→1col, hero stacks, slightly smaller type ── */
+@media(max-width:768px) {
+  .container, [class*="container"] { padding-left:1rem !important; padding-right:1rem !important; }
+  .hero, [class*="hero-grid"], [id="home"] > div, [id="home"] > .container > div {
+    display:flex !important; flex-direction:column !important; gap:1.5rem !important;
+  }
+  .hero-card, [class*="hero-card"], [class*="hero-image"], [class*="hero-visual"] {
+    max-width:100% !important; margin:0 auto !important; width:100% !important;
+  }
+  [class*="grid-3"], [class*="grid-4"], .grid-3, .grid-4, .grid-2, [class*="grid-2"] {
+    grid-template-columns:1fr 1fr !important; gap:1rem !important;
+  }
+  h1 { font-size:clamp(1.6rem,5vw,2.4rem) !important; line-height:1.15 !important; }
+  h2 { font-size:clamp(1.3rem,4vw,1.9rem) !important; line-height:1.2 !important; }
+  h3 { font-size:1rem !important; }
+  p, .lead { font-size:.95rem !important; }
+  section { padding-top:2.5rem !important; padding-bottom:2.5rem !important; }
+  .auth-card, [class*="auth-card"] { max-width:100% !important; margin:2rem 1rem !important; padding:1.5rem !important; }
+}
+
+/* ── PHONE (≤480px): everything stacks single column, type shrinks more ── */
+@media(max-width:480px) {
+  .container, [class*="container"] { padding-left:.85rem !important; padding-right:.85rem !important; }
+  /* Header: stack logo + nav vertically, smaller logo, hamburger pattern */
+  header > div, header > nav, .nav > .inner, [class*="header"] > div {
+    flex-wrap:wrap !important; gap:.5rem !important; padding-top:.5rem !important; padding-bottom:.5rem !important;
+    height:auto !important; min-height:56px !important;
+  }
+  header nav, header .links, [class*="header"] nav, [class*="nav-links"] {
+    display:flex !important; flex-wrap:wrap !important; gap:.25rem !important; width:100%; justify-content:center;
+  }
+  header nav a, header .links a, [class*="nav-links"] a {
+    padding:.35rem .65rem !important; font-size:.82rem !important;
+  }
+  header .auth, [class*="auth-buttons"], [class*="header-auth"] {
+    margin-left:0 !important; gap:.3rem !important;
+  }
+  header .auth a, [class*="auth-buttons"] a {
+    padding:.4rem .75rem !important; font-size:.8rem !important;
+  }
+  .logo { font-size:.95rem !important; }
+  .cart-icon { padding:6px !important; font-size:18px !important; }
+  /* Hero: stack and shrink */
+  .hero, [class*="hero-grid"] { gap:1rem !important; padding-top:1.5rem !important; }
+  h1 { font-size:clamp(1.4rem,7vw,1.9rem) !important; }
+  h2 { font-size:clamp(1.15rem,5vw,1.5rem) !important; }
+  /* All grids collapse to single column */
+  [class*="grid-3"], [class*="grid-4"], .grid-3, .grid-4, .grid-2, [class*="grid-2"],
+  .product-grid, [class*="product-grid"] {
+    grid-template-columns:1fr !important; gap:1rem !important;
+  }
+  /* Buttons: full-width-ish, touch-friendly */
+  .btn-primary, .btn-ghost, button[type="submit"], .ctas a, .ctas button {
+    width:auto !important; min-height:44px !important; padding:.75rem 1.25rem !important; font-size:.9rem !important;
+  }
+  .ctas { flex-direction:column !important; gap:.6rem !important; width:100%; }
+  .ctas > * { width:100% !important; text-align:center; }
+  /* Product/feature cards tighter */
+  .product-card, .card, article {
+    padding:1rem !important;
+  }
+  .product-card img, .card img { aspect-ratio:1/1 !important; }
+  /* Footer: stack columns */
+  footer, [class*="footer"] {
+    text-align:center; padding-top:2rem !important; padding-bottom:1.5rem !important;
+  }
+  footer .foot-grid, footer [class*="foot-grid"], footer .columns {
+    grid-template-columns:1fr !important; gap:1.5rem !important;
+  }
+  footer .brand-block, footer [class*="brand-block"] {
+    margin:0 auto; max-width:280px;
+  }
+  /* Section padding shrinks more on phones */
+  section { padding-top:2rem !important; padding-bottom:2rem !important; }
+  /* Tables (if any) become scrollable */
+  table { display:block; overflow-x:auto; white-space:nowrap; }
+}
+
+/* ── Hard safety net: any element that's wider than viewport gets wrapped ── */
+@media(max-width:768px) {
+  body > * { max-width:100vw !important; }
+  pre, code { white-space:pre-wrap !important; word-break:break-word !important; }
+}
+</style>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">☕</span>
+        Aura Coffee
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#craft">Our Craft</a>
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#location">Locations</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#signin" class="auth-link">Sign In</a>
+        <a href="#signup" class="btn btn-primary" style="padding: 0.5rem 1.1rem; font-size: 0.875rem;">Sign Up</a>
+        <button class="cart-icon" aria-label="Cart">
+          🛒 <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">✨ Micro-Lot Roastery & Bar</span>
+          <h1>Craft Coffee for the <em>Urban Rhythm</em></h1>
+          <p class="hero-subtitle">
+            Ethically sourced single-origin beans, hand-poured with surgical precision. Step out of the city noise into your daily sanctuary.
+          </p>
+          <div class="ctas">
+            <a href="#menu" class="btn btn-primary">Explore Menu</a>
+            <a href="#location" class="btn btn-secondary">Find Our Cafés</a>
+          </div>
+          <div class="trust-line">
+            <div class="avatars-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8cG9ydHJhaXQlMjBwZXJzb258ZW58MXx8fHwxNzg1Njk3MzA1fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Customer" class="avatar-sm" onerror="this.onerror=null;this.src='https://picsum.photos/seed/p1/100/100'">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8d29tYW4lMjBwb3J0cmFpdHxlbnwxfHx8fDE3ODU2OTczMDZ8MA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Customer" class="avatar-sm" onerror="this.onerror=null;this.src='https://picsum.photos/seed/p2/100/100'">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8bWFuJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzg1Njk3MzA2fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Customer" class="avatar-sm" onerror="this.onerror=null;this.src='https://picsum.photos/seed/p3/100/100'">
+            </div>
+            <span><strong>4.9★ rating</strong> from over 12,000+ local espresso purists</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="floating-badge">
+            <span class="badge-icon">🔥</span>
+            <div class="badge-text">
+              <strong>Fresh Batch Roasted</strong>
+              <span>Ethiopia Yirgacheffe • 2h ago</span>
+            </div>
+          </div>
+          <div class="hero-main-card">
+            <img src="https://images.unsplash.com/photo-1670404161009-29548c027d06?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8YmFyaXN0YSUyMGNvZmZlZSUyMGxhdHRlfGVufDF8fHx8MTc4NTY5NzMwN3ww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Aura Specialty Latte Art" onerror="this.onerror=null;this.src='https://picsum.photos/seed/auracoffee/600/600'">
+            <div class="hero-card-overlay">
+              <div>
+                <h4>Signature Golden Oat Latte</h4>
+                <p>Cardamom, organic espresso, velvety oat milk</p>
+              </div>
+              <a href="#menu" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.8rem;">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Stats Band -->
+      <div class="stats-bar">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Direct-Trade Beans</p>
+          </div>
+          <div class="stat-item">
+            <h3>18+</h3>
+            <p>Single Origin Varieties</p>
+          </div>
+          <div class="stat-item">
+            <h3>85°C</h3>
+            <p>Extraction Temp</p>
+          </div>
+          <div class="stat-item">
+            <h3>3</h3>
+            <p>Urban Flagship Locations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craft / Features Section -->
+  <section id="craft">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Uncompromising Quality</span>
+        <h2>Why Urbanites <em>Choose Aura</em></h2>
+        <p>We blend ancient coffee traditions with modern extraction science to make every morning extraordinary.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon-badge">⚡</div>
+          <h3>Precision Brewing</h3>
+          <p>Every shot is weighed to 0.1g and extracted using customized pressure profiles for nuanced flavor balance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-badge">🌱</div>
+          <h3>Ethical Sourcing</h3>
+          <p>We partner directly with smallholder farmers in Colombia, Ethiopia, and Guatemala, paying 40% above fair trade minimums.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-badge">🥐</div>
+          <h3>Artisan Pastries</h3>
+          <p>Freshly baked each dawn by our in-house pastry chef using local organic butter and heirloom stone-ground flour.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-badge">🏙️</div>
+          <h3>Urban Haven</h3>
+          <p>Designed with high-speed fiber Wi-Fi, ambient acoustic dampening, and warm architectural lighting for focus or relaxation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" style="background: var(--bg-soft);">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Curated Selection</span>
+        <h2>Seasonal Menu <em>Highlights</em></h2>
+        <p>Order ahead for swift pickup or enjoy relaxed table service in our café spaces.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Item 1 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8ZXNwcmVzc28lMjBjb2ZmZWV8ZW58MXx8fHwxNzg1Njk3MzA8fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Aura House Espresso" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/espresso1/600/600'">
+          <div class="product-details">
+            <span class="product-tag">Espresso Bar</span>
+            <h3>Double Origin Espresso</h3>
+            <p class="desc">Notes of dark plum, roasted hazelnut, and milk chocolate finish.</p>
+            <div class="price-row">
+              <span class="price">$4.20</span>
+              <button class="add-to-cart" data-name="Double Origin Espresso" data-price="4.20" data-image="https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8ZXNwcmVzc28lMjBjb2ZmZWV8ZW58MXx8fHwxNzg1Njk3MzA8fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80">Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1506372023823-741c83b836fe?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8bGF0dGUlMjBjb2ZmZWVhcnR8ZW58MXx8fHwxNzg1Njk3MzA4fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Velvet Oat Flat White" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/latte1/600/600'">
+          <div class="product-details">
+            <span class="product-tag">Signature Drink</span>
+            <h3>Velvet Oat Flat White</h3>
+            <p class="desc">Double ristretto folded with micro-foamed organic barista oat milk.</p>
+            <div class="price-row">
+              <span class="price">$5.80</span>
+              <button class="add-to-cart" data-name="Velvet Oat Flat White" data-price="5.80" data-image="https://images.unsplash.com/photo-1506372023823-741c83b836fe?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8bGF0dGUlMjBjb2ZmZWVhcnR8ZW58MXx8fHwxNzg1Njk3MzA4fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80">Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1777891257645-e5a867c0ce47?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8Y29sZGJyZXclMjBpY2VkY29mZmVlfGVufDF8fHx8MTc4NTY5NzMwOXww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Nitro Cold Brew Vanilla Cloud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/coldbrew1/600/600'">
+          <div class="product-details">
+            <span class="product-tag">Cold Crafted</span>
+            <h3>Nitro Vanilla Cloud Brew</h3>
+            <p class="desc">20-hour steeped Guatemalan cold brew infused with nitrogen & sweet cream foam.</p>
+            <div class="price-row">
+              <span class="price">$6.50</span>
+              <button class="add-to-cart" data-name="Nitro Vanilla Cloud Brew" data-price="6.50" data-image="https://images.unsplash.com/photo-1777891257645-e5a867c0ce47?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8Y29sZGJyZXclMjBpY2VkY29mZmVlfGVufDF8fHx8MTc4NTY5NzMwOXww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80">Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8bWF0Y2hhJTIwbGF0dGV8ZW58MXx8fHwxNzg1Njk3MzEwfDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Ceremonial Uji Matcha Latte" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/matcha1/600/600'">
+          <div class="product-details">
+            <span class="product-tag">Tea & Botanical</span>
+            <h3>Uji Ceremonial Matcha</h3>
+            <p class="desc">First-harvest Kyoto matcha whisked to order with touch of organic agave.</p>
+            <div class="price-row">
+              <span class="price">$6.20</span>
+              <button class="add-to-cart" data-name="Uji Ceremonial Matcha" data-price="6.20" data-image="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8bWF0Y2hhJTIwbGF0dGV8ZW58MXx8fHwxNzg1Njk3MzEwfDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80">Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1623334044303-241021148842?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8Y3JvaXNzYW50JTIwYmFrZXJ5fGVufDF8fHx8MTc4NTY5NzMxMHww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Almond Cardamom Croissant" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/croissant1/600/600'">
+          <div class="product-details">
+            <span class="product-tag">Fresh Bakery</span>
+            <h3>Cardamom Almond Croissant</h3>
+            <p class="desc">Flaky 81-layer croissant filled with frangipane creme & crushed almonds.</p>
+            <div class="price-row">
+              <span class="price">$5.20</span>
+              <button class="add-to-cart" data-name="Cardamom Almond Croissant" data-price="5.20" data-image="https://images.unsplash.com/photo-1623334044303-241021148842?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8Y3JvaXNzYW50JTIwYmFrZXJ5fGVufDF8fHx8MTc4NTY5NzMxMHww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80">Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6 -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1603046891726-36bfd957e0bf?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8dG9hc3QlMjBhdm9jYWRvJTIwZm9vZHxlbnwxfHx8fDE3ODU2OTczMTF8MA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Sourdough Avocado & Dukkah Toast" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/toast1/600/600'">
+          <div class="product-details">
+            <span class="product-tag">Kitchen Special</span>
+            <h3>Heirloom Avocado Toast</h3>
+            <p class="desc">House sourdough, smashed hass avocado, Egyptian dukkah, chili oil & microgreens.</p>
+            <div class="price-row">
+              <span class="price">$11.50</span>
+              <button class="add-to-cart" data-name="Heirloom Avocado Toast" data-price="11.50" data-image="https://images.unsplash.com/photo-1603046891726-36bfd957e0bf?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8dG9hc3QlMjBhdm9jYWRvJTIwZm9vZHxlbnwxfHx8fDE3ODU2OTczMTF8MA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80">Add to Order</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section id="story" class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image-stack">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8Y29mZmVlcm9hc3RlciUyMGNhZmV8ZW58MXx8fHwxNzg1Njk3MzEyfDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Aura Coffee Interior & Roaster" class="story-img-main" onerror="this.onerror=null;this.src='https://picsum.photos/seed/aurastory/700/800'">
+          <div class="story-badge">
+            <h4>2018</h4>
+            <p>Founded with a passion for uncompromised city coffee culture.</p>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <span class="eyebrow">Our Journey</span>
+          <h2>Founded for the <em>Thoughtful</em> Coffee Drinker</h2>
+          <p>
+            Aura Coffee House started as a tiny 4-seat espresso pop-up in an old printing factory. Our belief was simple: city dwellers deserve coffee that respects both the land it grew on and the palates of those who drink it.
+          </p>
+          <p>
+            Today, we custom-roast all our micro-lots in small 5kg batches every Tuesday and Friday. We partner directly with 12 eco-certified farms, paying above market prices to ensure community sustainability and top-tier harvest selection.
+          </p>
+          <div style="margin-top: 2rem;">
+            <a href="#location" class="btn btn-dark">Visit Our Roastery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Community Love</span>
+        <h2>What Our <em>Regulars Say</em></h2>
+        <p>From early morning creatives to afternoon meeting goers, here is why Aura is part of their daily routine.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <quote>"The flat white at Aura is hands down the best in the entire city. The atmosphere is calm, aesthetic, and perfect for getting solid work done."</quote>
+          </div>
+          <div class="author-row">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8d29tYW4lMjBzbWlsaW5nfGVufDF8fHx8MTc4NTY5NzMxM3ww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Elena Rostova" class="author-avatar" onerror="this.onerror=null;this.src='https://picsum.photos/seed/a1/100/100'">
+            <div class="author-info">
+              <h4>Elena Rostova</h4>
+              <span>Architect & Urban Planner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <quote>"As a coffee snob, their Ethiopian pour-overs are mind-blowing. Subtle jasmine floral notes and pristine acidity every single time."</quote>
+          </div>
+          <div class="author-row">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8bWFuJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzg1Njk3MzE0fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Marcus Chen" class="author-avatar" onerror="this.onerror=null;this.src='https://picsum.photos/seed/a2/100/100'">
+            <div class="author-info">
+              <h4>Marcus Chen</h4>
+              <span>Product Designer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <quote>"The online order-ahead feature saves my mornings. I grab my cold brew and cardamom croissant right off the bar without missing a beat."</quote>
+          </div>
+          <div class="author-row">
+            <img src="https://images.unsplash.com/photo-1706816365388-89dbadbdd893?ixid=M3wxMDA0NDk4fDB8MXxzZWFyY2h8MXx8d29tYW4lMjBjcmVhdGl2ZXxlbnwxfHx8fDE3ODU2OTczMTV8MA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&q=80" alt="Sarah Jenkins" class="author-avatar" onerror="this.onerror=null;this.src='https://picsum.photos/seed/a3/100/100'">
+            <div class="author-info">
+              <h4>Sarah Jenkins</h4>
+              <span>Creative Director</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours / Contact Section -->
+  <section id="location" style="background: var(--bg-soft);">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Find Us</span>
+        <h2>Locations & <em>Contact</em></h2>
+        <p>Come for the coffee, stay for the vibe. Three locations across the city center.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-info">
+          <div class="location-card">
+            <h3>📍 Downtown Flagship & Roastery</h3>
+            <p><strong>Address:</strong> 142 Mercer Street, Suite 101</p>
+            <p><strong>Hours:</strong> Mon - Fri: 6:30am - 6:00pm | Sat - Sun: 7:30am - 7:00pm</p>
+            <p><strong>Phone:</strong> (555) 234-8901</p>
+          </div>
+
+          <div class="location-card">
+            <h3>📍 Arts District Café</h3>
+            <p><strong>Address:</strong> 88 S. Broad Avenue</p>
+            <p><strong>Hours:</strong> Mon - Sun: 7:00am - 5:00pm</p>
+            <p><strong>Phone:</strong> (555) 890-1234</p>
+          </div>
+
+          <div class="location-card">
+            <h3>📍 Uptown Espresso Bar</h3>
+            <p><strong>Address:</strong> 412 Parkline Tower Plaza</p>
+            <p><strong>Hours:</strong> Mon - Fri: 6:00am - 4:00pm (Closed Weekends)</p>
+            <p><strong>Phone:</strong> (555) 456-7890</p>
+          </div>
+        </div>
+
+        <!-- Contact / Catering Inquiry Form -->
+        <div class="contact-form-box">
+          <h3 style="margin-bottom: 0.5rem;">Private Events & Catering</h3>
+          <p style="font-size: 0.92rem; margin-bottom: 1.5rem; color: var(--muted);">Planning an office pop-up or private event? Get in touch with our catering team.</p>
+
+          <form>
+            <div class="form-group">
+              <label for="contact-name">Your Full Name</label>
+              <input type="text" id="contact-name" placeholder="e.g. Alex Morgan" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" placeholder="alex@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="event-type">Inquiry Type</label>
+              <select id="event-type">
+                <option value="catering">Office Coffee Catering</option>
+                <option value="private">Private Event Rental</option>
+                <option value="wholesale">Wholesale Bean Inquiries</option>
+                <option value="general">General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" rows="4" placeholder="Tell us about your event date, headcount, or inquiry details..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign In Section (Target Hash) -->
+  <section id="signin" style="padding: 2rem 0;">
+    <div class="container">
+      <div class="auth-card">
+        <h1>Welcome Back</h1>
+        <p class="auth-sub">Sign in to your Aura Rewards account to earn bean points</p>
+        <form>
+          <div class="form-group">
+            <label for="signin-email">Email Address</label>
+            <input type="email" id="signin-email" placeholder="name@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label for="signin-password">Password</label>
+            <input type="password" id="signin-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+        </form>
+        <div class="auth-footer">
+          Don't have an account? <a href="#signup">Sign up here</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign Up Section (Target Hash) -->
+  <section id="signup" style="padding: 2rem 0;">
+    <div class="container">
+      <div class="auth-card">
+        <h1>Create Account</h1>
+        <p class="auth-sub">Join Aura Rewards for free drinks, priority pickup & secret coffee drops</p>
+        <form>
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" placeholder="jane@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+        </form>
+        <div class="auth-footer">
+          Already have an account? <a href="#signin">Sign in here</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready for Your <em>Morning Ritual?</em></h2>
+      <p>Skip the line during peak hours. Order ahead on your phone and pick up fresh at your nearest location.</p>
+      <a href="#menu" class="btn">Order Drinks Now</a>
+    </div>
+  </div>
+
+  <!-- Multi-column Footer -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-col foot-brand">
+          <a href="#home" class="logo">
+            <span class="logo-icon">☕</span>
+            Aura Coffee
+          </a>
+          <p>Artisan roastery and urban coffee sanctuary. Crafting memorable caffeine experiences every morning.</p>
+          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">© 2025 Aura Coffee House LLC. All rights reserved.</p>
+        </div>
+
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#craft">Our Brewing Craft</a></li>
+            <li><a href="#menu">Seasonal Menu</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#location">Find Cafés</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Menu Specialties</h4>
+          <ul>
+            <li><a href="#menu">Single Origin Espresso</a></li>
+            <li><a href="#menu">Velvet Oat Flat White</a></li>
+            <li><a href="#menu">Nitro Cold Brew</a></li>
+            <li><a href="#menu">Uji Ceremonial Matcha</a></li>
+            <li><a href="#menu">Artisan Pastries</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Connect & Social</h4>
+          <ul>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram (@auracoffee)</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+            <li><a href="#location">Catering & Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <span>Designed for Urban Coffee Purists</span>
+        <span>Privacy Policy • Terms of Service • Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+<script id="__mintsite_link_interceptor__">(function(){if(window.__mintsiteLinkInterceptor)return;window.__mintsiteLinkInterceptor=true;function showPage(name){  var pages=document.querySelectorAll('[data-page]');  if(pages.length<2)return false;  var found=false;  for(var i=0;i<pages.length;i++){    var n=(pages[i].getAttribute('data-page')||'').toLowerCase();    if(n===name){pages[i].hidden=false;pages[i].style.display='';found=true}    else pages[i].hidden=true;  }  if(found)window.scrollTo({top:0,behavior:'smooth'});  return found;}document.addEventListener('click',function(e){  var a=e.target.closest&&e.target.closest('a');  if(!a)return;  var href=(a.getAttribute('href')||'').trim();  if(href.charAt(0)==='#'&&href.length>1){    e.preventDefault();    var id=href.slice(1).toLowerCase();    if(showPage(id))return;    var el=document.getElementById(id);    if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}  } else if(href&&href!=='#'&&href.indexOf('javascript:')!==0){    e.preventDefault();    try{window.open(href,'_blank','noopener,noreferrer')}catch(_){}  }},true);})();</script>
+</body>
+</html>
